@@ -7,6 +7,7 @@ const express_1 = __importDefault(require("express"));
 require("dotenv/config");
 const app = (0, express_1.default)();
 const modules_1 = __importDefault(require("./src/start/modules"));
+const run_1 = __importDefault(require("./src/start/run"));
 (0, modules_1.default)(app);
 // get post routes
 app.get("/post", (req, res) => {
@@ -20,4 +21,5 @@ app.get("/", (req, res) => {
 app.get("/users", (req, res) => {
     res.status(200).json({ message: "Get all users" });
 });
+(0, run_1.default)(app);
 exports.default = app;

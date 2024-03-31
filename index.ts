@@ -3,6 +3,7 @@ import "dotenv/config"
 const app: Application = express();
 
 import modules from "./src/start/modules"
+import run from "./src/start/run"
 
 modules(app);
 // get post routes
@@ -18,4 +19,6 @@ app.get("/", (req: Request, res: Response) => {
 app.get("/users", (req: Request, res: Response) => {
   res.status(200).json({ message: "Get all users" });
 });
+
+run(app);
 export default app;
