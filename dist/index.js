@@ -14,4 +14,8 @@ app.get("/post", (req, res) => {
 app.get("/", (req, res) => {
     res.status(200).json({ message: "Hello World" });
 });
+// root routes
+app.get("/user", (req, res) => {
+    res.status(200).json({ message: "Get all users" });
+});
 exports.default = app;
