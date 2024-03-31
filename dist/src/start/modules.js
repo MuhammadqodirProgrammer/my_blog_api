@@ -8,6 +8,6 @@ const express_1 = __importDefault(require("express"));
 const index_1 = __importDefault(require("../router/index"));
 const modules = async (app) => {
     app.use(express_1.default.json());
-    app.use("/", index_1.default);
+    app.use(index_1.default);
 };
 exports.default = modules;
