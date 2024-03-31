@@ -6,7 +6,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 require("dotenv/config");
 const app = (0, express_1.default)();
-app.use(express_1.default.json());
+const modules_1 = __importDefault(require("./src/start/modules"));
+(0, modules_1.default)(app);
 // get post routes
 app.get("/post", (req, res) => {
     res.status(200).json({ message: "post routes" });

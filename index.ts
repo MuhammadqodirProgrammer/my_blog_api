@@ -1,8 +1,10 @@
-import express, { Request, Response } from "express";
+import express, { Application, Request, Response } from "express";
 import "dotenv/config"
-const app = express();
-app.use(express.json());
+const app: Application = express();
 
+import modules from "./src/start/modules"
+
+modules(app);
 // get post routes
 app.get("/post", (req: Request, res: Response) => {
   res.status(200).json({ message: "post routes" });
