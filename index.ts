@@ -13,7 +13,7 @@ app.get("/", (req: Request, res: Response) => {
   res.status(200).json({ message: "Hello World" });
 });
 // root routes
-app.get("/user", (req: Request, res: Response) => {
+app.get("/users", (req: Request, res: Response) => {
   res.status(200).json({ message: "Get all users" });
 });
 export default app;
