@@ -1,4 +1,4 @@
 import mediumRoute from "./medium.route";
+import newsRoute from "./new.route"
 
-
-export default [mediumRoute];
+export default [mediumRoute, newsRoute];
