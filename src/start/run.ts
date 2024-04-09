@@ -3,11 +3,11 @@ import { connect } from "mongoose";
 
 
 const run = async (app: Application) => {
-  await connect("mongodb+srv://ziyodilladev:ziyodilla123@cluster0.t9s2ir2.mongodb.net/my_blog");
-  console.log("Connect to database...");
-
-  app.listen(2002, () => {
-    console.log(`Server running on port : ${2002}`);
+  await connect(process.env.CONNECTION_STRING);
+  console.log("Connect to database..." ,process.env.CONNECTION_STRING);
+const PORT =process.env.PORT ||2002
+  app.listen(PORT, () => {
+    console.log(`Server running on port : ${PORT}`);
     
   });
 };
