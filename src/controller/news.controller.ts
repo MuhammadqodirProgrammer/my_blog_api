@@ -58,3 +58,16 @@ export const deleteNews = async (req: Request, res: Response) => {
     }
 };
 
+export const getOneNews = async (req: Request, res: Response) => {
+    try {
+        const { id } = req.params;
+
+        const data = await News.findById(id);
+
+        res.status(200).json(data);
+
+    } catch (error) {
+        res.status(500).json({ message: error });
+    }
+};
+
